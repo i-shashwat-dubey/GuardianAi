@@ -43,7 +43,6 @@ if not API_KEY:
 # Create the Gemini client (new SDK style)
 client = genai.Client(api_key=API_KEY)
 
-
 # ------------------------------------------------------------------
 # LANGUAGE SELECTOR
 # Change this value to generate data in a different language:
@@ -53,7 +52,7 @@ client = genai.Client(api_key=API_KEY)
 #   4 = Bengali
 #   5 = Tamil
 # ------------------------------------------------------------------
-LANGUAGE = 1
+LANGUAGE = 2
 
 # Output CSV — filename changes automatically based on language chosen
 _LANGUAGE_NAMES = {1: "english", 2: "hindi", 3: "hinglish", 4: "bengali", 5: "tamil"}
@@ -70,7 +69,7 @@ TOTAL_BATCHES = 10  # 10 x 50 = 500 rows total
 BATCH_SIZE = 50     # 25 SAFE + 25 EMERGENCY
 
 # Seconds to wait between API calls (60s keeps you within free tier limits)
-DELAY_SECONDS = 60
+DELAY_SECONDS = 35
 
 
 # ==================================================================
