@@ -24,8 +24,8 @@ BASE_DIR   = os.path.dirname(os.path.abspath(__file__))
 
 # Input CSVs — add or remove files from this list as needed
 INPUT_FILES = [
-    os.path.join(BASE_DIR, "safety_dataset_english.csv"),
-    os.path.join(BASE_DIR, "safety_dataset_hindi.csv"),
+    os.path.join(BASE_DIR, "raw", "safety_dataset_english.csv"),
+    os.path.join(BASE_DIR, "raw", "safety_dataset_hindi.csv"),
 ]
 
 TRAIN_FILE  = os.path.join(BASE_DIR, "train.csv")

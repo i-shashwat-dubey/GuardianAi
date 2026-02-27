@@ -22,17 +22,11 @@ import time
 import threading
 import importlib
 
-# Import Guardian AI modules
-# speech-detection.py has a hyphen — Python can't import that normally,
-# so we use importlib to load it as a module
-speech_detection = importlib.import_module("speech-detection")
-start_transcription = speech_detection.start_transcription
-
-offline_classifier = importlib.import_module("offline-classifier")
-SafetyClassifier = offline_classifier.SafetyClassifier
-
-from threat_scorer import ThreatScorer, ThreatState, STATE_COLORS, RESET
-from memory import MemoryManager
+# Import Guardian AI modules (all in core/ package now)
+from core.speech_detection import start_transcription
+from core.offline_classifier import SafetyClassifier
+from core.threat_scorer import ThreatScorer, ThreatState, STATE_COLORS, RESET
+from core.memory import MemoryManager
 
 
 # ══════════════════════════════════════════════════════════════════
@@ -40,7 +34,7 @@ from memory import MemoryManager
 # ══════════════════════════════════════════════════════════════════
 # Set to True to use the real Longformer classifier
 # Set to False to use a keyword-based mock (for testing without model)
-USE_REAL_CLASSIFIER = False
+USE_REAL_CLASSIFIER = True
 
 # Threat scorer parameters
 ALPHA = 0.5               # EMA smoothing (higher = more reactive)

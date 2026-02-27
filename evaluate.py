@@ -8,7 +8,7 @@ Run BEFORE fine-tuning to get baseline accuracy:
     python evaluate.py
 
 Run AFTER fine-tuning to get post-tuning accuracy:
-    python evaluate.py --model ./muril_finetuned
+    python evaluate.py --model ./models/muril_finetuned
 
 Usage:
     python evaluate.py [--model MODEL_NAME_OR_PATH] [--test TEST_CSV]
@@ -31,7 +31,7 @@ from sklearn.metrics import (
 # ==================================================================
 
 DEFAULT_MODEL = "google/muril-base-cased"   # base MuRIL (before fine-tuning)
-DEFAULT_TEST  = os.path.join(os.path.dirname(os.path.abspath(__file__)), "test.csv")
+DEFAULT_TEST  = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "test.csv")
 MAX_LEN       = 128
 BATCH_SIZE    = 32
 

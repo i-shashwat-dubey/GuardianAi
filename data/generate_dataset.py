@@ -52,13 +52,14 @@ client = genai.Client(api_key=API_KEY)
 #   4 = Bengali
 #   5 = Tamil
 # ------------------------------------------------------------------
-LANGUAGE = 2
+LANGUAGE = 3
 
 # Output CSV — filename changes automatically based on language chosen
 _LANGUAGE_NAMES = {1: "english", 2: "hindi", 3: "hinglish", 4: "bengali", 5: "tamil"}
 _lang_name = _LANGUAGE_NAMES.get(LANGUAGE, f"lang{LANGUAGE}")
 OUTPUT_FILE = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
+    "raw",
     f"safety_dataset_{_lang_name}.csv"
 )
 

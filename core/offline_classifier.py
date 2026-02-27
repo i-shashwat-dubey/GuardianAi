@@ -53,9 +53,9 @@ MODEL_NAME = "google/muril-base-cased"
 
 # Where to save the model locally (offline use after first download)
 MODEL_DIR = os.path.join(
-    os.path.dirname(os.path.abspath(__file__)),
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
     "models",
-    "muril-safety",
+    "fine-tuned-v1",
 )
 
 # Classification labels
